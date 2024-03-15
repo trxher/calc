@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -18,18 +20,29 @@ func main() {
 	fmt.Scan(&b)
 
 	if operation == "+" {
-		fmt.Print("Ответ: ", a+b)
+		fmt.Println("Ответ: ", a+b)
 	} else if operation == "-" {
-		fmt.Print("Ответ: ", a-b)
+		fmt.Println("Ответ: ", a-b)
 	} else if operation == "*" {
-		fmt.Print("Ответ: ", a*b)
+		fmt.Println("Ответ: ", a*b)
 	} else if operation == "/" {
 		if b == 0 {
-			fmt.Print("На ноль делить нельзя!")
+			fmt.Println("На ноль делить нельзя!")
 		} else {
-			fmt.Print("Ответ: ", a/b)
+			fmt.Println("Ответ: ", a/b)
 		}
 	} else {
-		fmt.Print("Такой операции не существует!")
+		fmt.Println("Такой операции не существует!")
+	}
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	for scanner.Scan() {
+		exit := scanner.Text()
+		if exit == "q" {
+			break
+		} else {
+			fmt.Println("Нажмите 'q' для выхода")
+		}
 	}
 }
