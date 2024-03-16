@@ -11,14 +11,13 @@ var operation string
 var a, b float64
 
 // Заставка
-func miniature() {
-	content, err := ioutil.ReadFile("tag.txt")
+func tag() {
+	tag, err := ioutil.ReadFile("tag.txt")
 	// the file is inside the local directory
 	if err != nil {
 		fmt.Println("Err")
 	}
-
-	fmt.Println(string(content))
+	fmt.Println(string(tag))
 }
 
 // Ввод знака операции
@@ -72,7 +71,7 @@ func exit() {
 
 // Основная функция
 func main() {
-	miniature()
+	tag()
 	inputOperationUser()
 	inputVariablesUser()
 	calc()
