@@ -12,10 +12,12 @@ var a, b float64
 
 // Заставка
 func miniature() {
-	content, err := ioutil.ReadFile("miniature.txt") // the file is inside the local directory
+	content, err := ioutil.ReadFile("miniature.txt")
+	// the file is inside the local directory
 	if err != nil {
 		fmt.Println("Err")
 	}
+
 	fmt.Println(string(content))
 }
 
