@@ -3,11 +3,21 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
-var a, b float64
 var operation string
+var a, b float64
+
+// Заставка
+func miniature() {
+	content, err := ioutil.ReadFile("miniature.txt") // the file is inside the local directory
+	if err != nil {
+		fmt.Println("Err")
+	}
+	fmt.Println(string(content))
+}
 
 // Ввод знака операции
 func inputOperationUser() {
@@ -60,7 +70,7 @@ func exit() {
 
 // Основная функция
 func main() {
-
+	miniature()
 	inputOperationUser()
 	inputVariablesUser()
 	calc()
