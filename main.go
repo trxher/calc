@@ -12,7 +12,7 @@ var a, b float64
 
 // Заставка
 func miniature() {
-	content, err := ioutil.ReadFile("miniature.txt")
+	content, err := ioutil.ReadFile("tag.txt")
 	// the file is inside the local directory
 	if err != nil {
 		fmt.Println("Err")
